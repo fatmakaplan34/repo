@@ -48,11 +48,20 @@ def tas_kagit_makas_FATMA_KAPLAN():
 
         else:
             print("Maalesef kaybettiniz,bilgisayar kazandı!")
+            
+        while True:
+            continue_ = input("Bir kez daha oynamak ister misiniz (Evet/Hayır): ").lower()
+            pc_continue = random.choice(["evet", "hayır"])
 
-        continue_=input("Bir kez daha oynamak ister misiniz(Evet/Hayır):").lower()
-        if continue_ != "evet":
-            print("Oyun bitti.")
-            break
+            if continue_ == "evet" and pc_continue == "evet":
+                print("Yeni oyun talebi karşılıklı onaylandı.")
+                break  
+                
+            elif continue_ == "hayır" or pc_continue == "hayır":
+                print("Bilgisayar yeni oyun talebini reddetti. Oyun bitti.")
+                return
+            else:
+                print("Geçersiz yanıt. Lütfen 'Evet' veya 'Hayır' yazın.")
 
 if __name__=="__main__":
     tas_kagit_makas_FATMA_KAPLAN()
